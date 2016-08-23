@@ -1,3 +1,4 @@
 base:
-  '*':
-    - default
+  '* and not master':
+    - match: compound
+    - home

@@ -23,12 +23,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       salt.minion_pub = "saltstack/keys/master_minion.pub"
       salt.seed_master = {
                           "minion1" => "saltstack/keys/minion1.pub",
-                          "minion2" => "saltstack/keys/minion2.pub"
+                          "minion2" => "saltstack/keys/minion2.pub",
+                          "master" => "saltstack/keys/master_minion.pub"
                          }
 
       salt.install_type = "stable"
       salt.install_master = true
-      salt.no_minion = true
+      salt.no_minion = false
       salt.verbose = true
       salt.colorize = true
       salt.bootstrap_options = "-P -c /tmp"
